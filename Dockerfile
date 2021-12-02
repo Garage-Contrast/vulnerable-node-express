@@ -1,7 +1,5 @@
 # Common build stage
-FROM docker.io/node:14.14.0-alpine3.12 as common-build-stage
-
-USER 1001
+FROM registry.access.redhat.com/ubi8/nodejs-14-minimal as common-build-stage
 
 COPY --chown=1001:1001 . ./app
 

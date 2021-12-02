@@ -1,7 +1,9 @@
 # Common build stage
 FROM docker.io/node:14.14.0-alpine3.12 as common-build-stage
 
-COPY . ./app
+USER 1001
+
+COPY --chown=1001:1001 . ./app
 
 WORKDIR /app
 

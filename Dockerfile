@@ -1,9 +1,9 @@
 # Common build stage
 FROM registry.access.redhat.com/ubi8/nodejs-14-minimal as common-build-stage
 
-COPY --chown=1001:1001 . ./app
-
 WORKDIR /app
+
+COPY --chown=1001:1001 . /app
 
 RUN npm install
 

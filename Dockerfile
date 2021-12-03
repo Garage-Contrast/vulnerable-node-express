@@ -8,7 +8,6 @@ WORKDIR /app
 COPY --chown=1001:root . /app
 
 RUN npm install
-RUN chmod -R 775 /app
 
 EXPOSE 3000
 
@@ -25,5 +24,7 @@ FROM common-build-stage as production-build-stage
 ENV NODE_ENV production
 
 RUN npm run build
+
+RUN chmod -R 775 /app
 
 CMD ["npm", "run", "start"]

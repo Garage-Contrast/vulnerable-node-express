@@ -21,6 +21,8 @@ CMD ["npm", "run", "dev"]
 # Production build stage
 FROM common-build-stage as production-build-stage
 
+ENV PORT 3000
+
 ENV NODE_ENV production
 
 RUN npm run build
